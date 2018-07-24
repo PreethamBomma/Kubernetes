@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sharevol
+  labels:
+     app: abcd
+spec:
+  containers:
+  - name: c1
+    image: preethambomma/kubernetes:latest 
+    imagePullPolicy: IfNotPresent      
+      
+      
+      
+    volumeMounts:
+      - name: xchange
+        mountPath: "/var/www/html/messages/"
+  - name: c2
+    image: preethambomma/kubernetes:latest
+    imagePullPolicy: IfNotPresent
+      
+      
+      
+    volumeMounts:
+      - name: xchange
+        mountPath: "/var/www/html/messages/"
+  volumes:
+  - name: xchange
+    emptyDir: {}

@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: apache-service
+spec:
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80 
+      nodePort: 32312
+    - name: https
+      port: 80
+      targetPort: 80
+      nodePort: 32313
+  selector:
+    app: abcd
+  type: LoadBalancer
