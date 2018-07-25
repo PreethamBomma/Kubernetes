@@ -9,7 +9,8 @@ spec:
   - name: c1
     image: preethambomma/kubernetes:latest 
     imagePullPolicy: IfNotPresent      
-      
+    command: [ "bash", "-c", "/usr/sbin/apache2ctl -D FOREGROUND" ]
+    
       
       
     volumeMounts:
@@ -18,7 +19,10 @@ spec:
   - name: c2
     image: preethambomma/kubernetes:latest
     imagePullPolicy: IfNotPresent
-      
+    
+    
+    
+    
       
       
     volumeMounts:
