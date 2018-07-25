@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: apache-service1
+spec:
+  ports:
+    - name: http
+      port: 8081
+      targetPort: 80 
+  selector:
+    app: abcd
+  type: LoadBalancer
